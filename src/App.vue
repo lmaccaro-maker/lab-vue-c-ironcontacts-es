@@ -1,19 +1,24 @@
+// src/App.vue
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + Vite" />
+  <div class="app">
+    <h1>Iron Contacts</h1>
+    <ul>
+      <!-- Usa v-for para iterar sobre los contactos y mostrar información -->
+      <li v-for="contact in contacts" :key="contact.id">
+        <img
+          :src="contact.pictureUrl"
+          alt="Image de {{ contact.name }}"
+          class="profile"
+        />
+        <h2>{{ contact.name }}</h2>
+        <p>Popularity: {{ contact.popularity }}</p>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script setup>
-import HelloWorld from './components/HelloWorld.vue';
+import contacts from "./contacts.json";
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+<style></style>
