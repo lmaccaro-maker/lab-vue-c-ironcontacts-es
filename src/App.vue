@@ -3,7 +3,6 @@
   <div class="app">
     <h1>Iron Contacts</h1>
     <ul>
-      <!-- Usa v-for para iterar sobre los contactos y mostrar información -->
       <li v-for="contact in contacts" :key="contact.id">
         <img
           :src="contact.pictureUrl"
